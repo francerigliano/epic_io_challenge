@@ -31,9 +31,8 @@ def JSONCapture(jsonPath):
         f = open(jsonPath) #Abro el archivo
         JSONCapture.data = json.load(f) #Lo cargo en una lista
         for i in range(len(JSONCapture.data)): #Con un condicional for voy iterando en cada valor de data
-            #print(data[i]['coordinates']) Aquí había agregado un print para saber cuales son las coordenadas x,y,w,h
             JSONCapture.bboxes.append(tuple(JSONCapture.data[i]['coordinates'])) #Agrego cada terna de coordenadas como tupla en la lista vacia
-            print("Las coordenadas para el id " + i + " son:" + str(tuple(JSONCapture.data[i]['coordinates'])))
+            print("Las coordenadas para el id " + i + " son:" + str(tuple(JSONCapture.data[i]['coordinates']))) #Agrego un print para saber cuales son las coordenadas x,y,w,h
         f.close() #cierro el archivo
 
     else:
